@@ -11,10 +11,11 @@ Och svara på följande metoder
 * paid_at
 * bookkeep_amount
 
-I gem filen lägg till fortnox gemet
+I Gemfilen lägg till
 
 ```ruby
 gem "fortnox", :git => 'git://github.com/jnstq/fortnox.git'
+gem "bookkeep", :git => 'git://github.com/jnstq/bookkeep.git'
 ```
 
 
