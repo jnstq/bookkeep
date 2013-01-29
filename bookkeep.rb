@@ -55,9 +55,13 @@ class Bookkeep
   end
 
   def images
-    order.line_items.map(&:preview_url).compact.map do |url|
+    line_items_with_preview.map do |url|
       { :image => { :link => Rack::Utils.escape(url) } }
     end
+  end
+
+  def line_items_with_preview
+    order.line_items.select { |line| line.respond_to?(:preview_url) }
   end
 
   def paid_on
